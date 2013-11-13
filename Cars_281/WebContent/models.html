@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BMW Carz - Models</title>
+<link rel="stylesheet" href="stylesheets/default.css">
+
+<script type="text/JavaScript" language="JavaScript">
+	function disableElements(var nodes, boolean status)
+	{
+		for(var i = 0; i < nodes.length; i++){
+            nodes[i].disabled = status;
+        }
+	}
+	
+	function display()
+	{
+		alert('new alert');
+	}
+
+	function toggleInput(radio) {
+
+		alert('radio button clicked'+radio)
+		if (document.getElementById("radio1").checked) {
+			document.write("Inside 1");
+			document.getElementById("radio2").checked = false;
+			document.getElementById("radio3").checked = false;
+
+			document.getElementById("series_1").disabled = false;
+            var nodes1 = document.getElementById("series_1").getElementsByTagName('*');
+            disableElements(nodes1,false);
+			
+            document.getElementById("series_3").disabled = true;
+            var nodes2 = document.getElementById("series_3").getElementsByTagName('*');
+            disableElements(nodes2,true);
+            document.getElementById("series_5").disabled = true;
+            var nodes3 = document.getElementById("series_5").getElementsByTagName('*');
+            disableElements(nodes3,true);
+			
+			/*nodes = document.getElementById("series_1").getElementsByTagName('*');
+			disableElements(nodes);
+			nodes = document.getElementById("series_3").getElementsByTagName('*').disabled = true;
+			disableElements(nodes);
+			nodes = document.getElementById("series_5").getElementsByTagName('*').disabled = true;
+			disableElements(nodes);*/
+		}
+
+		if (document.getElementById("radio2").checked) {
+			document.getElementById("radio1").checked = false;
+			document.getElementById("radio3").checked = false;
+
+			document.getElementById("series_1").getElementsByTagName('*').disabled = "disabled";
+			document.getElementById("series_3").getElementsByTagName('*').disabled = false;
+			document.getElementById("series_5").getElementsByTagName('*').disabled = true;
+		}
+
+		if (document.getElementById("radio3").checked) {
+			document.getElementById("radio1").checked = false;
+			document.getElementById("radio2").checked = false;
+
+			document.getElementById("series_1").getElementsByTagName('*').disabled = true;
+			document.getElementById("series_3").getElementsByTagName('*').disabled = true;
+			document.getElementById("series_5").getElementsByTagName('*').disabled = false;
+		}
+	}
+</script>
+
+</head>
+<body>
+	<header id="mast">
+		<h1>BMW Carz</h1>
+	</header>
+	<nav id="global">
+		<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a class="selected" href="models.html">Models</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+	</nav>
+	<br>
+	<br>
+	<br>
+
+	<!-- Start of FORM -->
+	<form method="post" action="carController" name="myForm">
+
+			<input type="hidden" name="Company" value="BMW"> 
+			<input id="radio1" type="radio" name="radio1" onclick="display()"/>
+			<img src="images/series_1.jpg" width="250" height="100" alt="" title="" border="0" />
+	
+		<div id="series_1">
+			<input id="1" type="checkbox" name="checkBox001" value="Assisted Parking">Assisted Parking
+			<input id="2" type="checkbox" name="checkBox002" value="Blast Entertainment Package">Blast Entertainment Package
+			<input id="3" type="checkbox" name="checkBox003" value="M Sports Package">M Sports Package
+			<br> 
+			
+			Color<select id="4" name="Color1">
+					<option value="Black1">Black</option>
+					<option value="White1">White</option>
+					<option selected value="Gray1">Gray</option>
+			</select>
+		</div>
+
+		<hr>
+
+			<input id="radio2" type="radio" name="radio2" onClick="toggleInput(this)">
+			<img src="images/series_3.jpg" width="250" height="100" alt="" title="" border="0" />
+		<div id="series_3">
+			<input id="5" type="checkbox" name="check1" value="Assisted Parking">Assisted Parking
+			<input id="6" type="checkbox" name="check2" value="Sun-Roof">Sun-Roof
+			<input id="7" type="checkbox" name="check3" value="M Sports Package">M Sports Package
+			<br>
+			
+			Color<select id="8" name="Color2">
+					<option value="Black2">Black</option>
+					<option value="White2">White</option>
+					<option selected value="Gray2">Gray</option>
+			</select>
+		</div>
+
+		<hr>
+
+			<input id="radio3" type="radio" name="radio3" onClick="toggleInput(this)">
+			<img src="images/series_5.jpg"	width="250" height="100" alt="" title="" border="0" />
+		<div id="series_5"> 
+			<input id="9" type="checkbox" name="check4" value="Assisted	Parking">Assisted	Parking
+			<input id="10" type="checkbox" name="check5" value="2 + 2 seater">2 + 2 seater
+			<input id="11" type="checkbox" name="check6" value="M Sports Package">M Sports Package
+			<br> 
+			
+			Color<select id="12" name="Color3">
+					<option value="Black3">Black</option>
+					<option value="White3">White</option>
+					<option selected value="Gray3">Gray</option>
+			</select>
+		</div>
+
+		<br><br> 
+		
+		<input type="submit" name="submit" value="Proceed to Payment" align="center" onclick="display()">
+	</form>
+	<!-- End of FORM -->
+
+</body>
+</html>

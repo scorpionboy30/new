@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link type="text/css" rel="stylesheet" href="test.css"/>
+    <title>Build Your Audi</title>
+    <script language="javascript">
+
+      function Display(question) {
+              h1=document.getElementById("yes");
+              h2=document.getElementById("no");
+              h3=document.getElementById("dk");
+              h4=document.getElementById("yes2");
+  
+                  if (question=="yes") h1.style.display="block";
+                      else h1.style.display="none";
+                  if (question=="no") h2.style.display="block";
+                      else h2.style.display="none";
+                  if (question=="dk") h3.style.display="block";
+                      else h3.style.display="none";
+                  if (question=="yes2") h4.style.display="block";
+                      else h4.style.display="none";
+               }
+    </script>
+    
+  </head>
+  <body>
+    <div id="navbar"> 
+      <ul>
+        <li><a href="Audi_Home.html"><span>Home</span></a></li>
+        <li><a href="Audi_Models.html">Models</a></li>
+        <li><a href="Audi_Contact.html"><span>Contact</span></a></li>
+        <li><a href="Audi_About.html"><span>About</span></a></li>
+       </ul>
+    </div>
+   
+   <p><img src="http://upload.wikimedia.org/wikipedia/en/thumb/a/a3/Audi_Logo.svg/220px-Audi_Logo.svg.png"/></p>
+   <br/><br/>
+    Select the features that you want in your Car <br/><br/>
+    <form name="form1" action="Audi_Buy.html">
+      <div>
+        Select the Trim
+        <input type="radio" name="trim" value="yes">Premium
+        <input type="radio" name="trim" value="yes">Premium Plus
+        <input type="radio" name="trim" value="yes">Prestige
+       </div>
+      <br/><br/>
+      <div>
+        Select Transmission Type
+        <input type="radio" name="gears" value="Auto">Automatic
+        <input type="radio" name="gears" value="Manual">Six Speed Manual
+        <input type="radio" name="gears" value="Eight_Auto">Eight Speed Automatic
+       </div>
+      <br/> <br/>
+      <button type="submit" value="redirect">Buy</button>
+      
+</form>
+  </body>
+</html>
